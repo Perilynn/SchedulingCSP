@@ -91,14 +91,12 @@ public class Simulation {
 	        			classes.get(listIndex2).preReqs.add(Integer.parseInt(line.substring(b)));
 	        			
 	        		}
-	        		//System.out.println(classes.get(listIndex2));
 	        		listIndex2++;
 	        	}
 	        	if(i==2*N+1){
 	        		int d = 1;
 	        		if(line.charAt(1) != ' ') d = 2;
 	        		intClasses = Integer.parseInt(line.substring(0, d));
-	        		//System.out.println(intClasses);
 	        		int a=0;
         			int b=d+1;
         			int c = b+1;
@@ -107,7 +105,6 @@ public class Simulation {
         				if(line.charAt(c) != ' '){
         					c++;
         				}
-        				//System.out.println("adding " + Integer.parseInt(line.substring(b, c)));
         				intCourses.add(Integer.parseInt(line.substring(b, c)));
         			}
         			intCourses.add(Integer.parseInt(line.substring(b)));
@@ -116,18 +113,14 @@ public class Simulation {
 	        		budget = Integer.parseInt(line);
 	        	}
 
-//	            sb.append(line);
-//	            sb.append(System.lineSeparator());
-	            //System.out.println(line);
+
 	            
 	            i++;
 	            if(i==1){
 	            	N =  Integer.parseInt(line.substring(0, 2));
 	            	CMin = Integer.parseInt(line.substring(3, 5));
 	            	CMax = Integer.parseInt(line.substring(6));
-	            	//System.out.println(N);
-	            	//System.out.println(CMin);
-	            	//System.out.println(CMax);
+
 	            }
 	            
 	            line = br.readLine();
@@ -136,10 +129,7 @@ public class Simulation {
 	    } finally {
 	       br.close();
 	    }
-	    for(int i = 0; i < intCourses.size(); i++) {   
-	        //System.out.println(intCourses.get(i));
-	    }  
-	    //System.out.println(budget);
+ 
 		return;
 		
 	}
