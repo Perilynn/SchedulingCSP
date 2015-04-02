@@ -58,12 +58,6 @@ public class Simulation {
 	
 	public void schedule(){
 		boolean keepGoing = false;
-//		intCourses.add(7);
-//		intCoursesLeft.add(7);
-//		intCourses = new ArrayList<Integer>();
-//		intCourses.add(7);
-//		intCoursesLeft = new ArrayList<Integer>();
-//		intCoursesLeft.add(7);
 		while(!intCoursesLeft.isEmpty()){
 			//System.out.println(classes.get(intCoursesLeft.get(0)-1));
 			add(classes.get(intCoursesLeft.get(0)-1));			
@@ -207,12 +201,6 @@ public class Simulation {
 		return true;
 	}
 	
-	
-	//You should ignore everything below this
-	
-	//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	
-	
 	public String toString(){
 		
 		String ret = cost() + " " + semesters.size() + "\n";
@@ -239,7 +227,7 @@ public class Simulation {
 		}
 		return ret;
 	}
-	//DO NOT TRY TO READ THIS IT'S TERRIBLE CODE THAT I WILL MAKE LOOK NICE LATER JUST ASSUME EVERYTHING WORKS BECAUSE IT DOES, EVERYTHING IS SET IN THE CONSTRUCTOR
+	
 	public void processClasses(String name) throws FileNotFoundException, IOException{
 		String line = "line";
 		File file = new File(name + ".txt");

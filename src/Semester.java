@@ -33,29 +33,19 @@ public class Semester {
 	
 	public Class add(Class c){
 		currentIndex = index;
-		//System.out.println("attempting 1 to add " + c.index);
-		//System.out.println(currentIndex);
-		//System.out.println(c.hasPRleft());
 		if(!classes.contains(c)){
-			//System.out.println("attempting 2 to add " + c.index);
 			if(c.hours+hours<=CMax){
-				//System.out.println("attempting 3 to add " + c.index);
 				if(!c.hasPRleft()){
-					//System.out.println("attempting 4 to add " + c.index);
 					for(Class cloop : classes){
 						if (c.preReqs.contains(cloop.index)) Simulation.sameAsPR = true;
 					}
 					if(Simulation.sameAsPR){
-						//System.out.println("same as PR");
-						//System.out.println("returning " + c.index + " without adding");
 						return c;
 					}
 					classes.add(c);
-					//System.out.println("added " + c.index + " from Semester");
 					hours += c.hours;
 					
 					c.taken = true;
-					//System.out.println("returning " + c);
 					return c;
 				}
 				else{
@@ -65,13 +55,11 @@ public class Semester {
 						c.preReqsLeft.remove(0);
 						
 					}
-					//System.out.println("returning add(" + allClasses.get(PR-1) + ")");
 					return add(allClasses.get(PR-1));
 					
 				}
 			}
 		}
-		//System.out.println("returning null");
 		return null;
 	}
 	
